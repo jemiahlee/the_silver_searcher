@@ -25,12 +25,18 @@ Dont ignore anything (unrestricted search):
   a/test/tests.txt:1:whatever3
   a/tests/tests.txt:1:whatever4
 
-Ignore things that have test in them:
+Ignore things that have "test" in their names:
 
   $ ag --ignore test whatever
   a/b/c/blah.yml:1:whatever1
 
-Ignore things that have test in them:
+Ignore things that have "tests" in their names:
 
   $ ag --ignore tests whatever
   a/b/c/blah.yml:1:whatever1
+
+Only ignore things that have "tests" in their names:
+
+  $ ag -D -u --ignore tests whatever
+  a/b/c/blah.yml:1:whatever1
+  a/b/foo.yml:1:whatever2
